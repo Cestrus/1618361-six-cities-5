@@ -11,12 +11,7 @@
   },
   "devDependencies": {
     "eslint": "5.13.0",
-    "eslint-config-htmlacademy": "0.5.2"
-  },
-  "engines": {
-    "node": "10"
-  },
-  "dependencies": {
+    "eslint-config-htmlacademy": "0.5.2",
     "@babel/core": "7.8.7",
     "@babel/preset-env": "7.8.7",
     "@babel/preset-react": "7.8.3",
@@ -25,5 +20,11 @@
     "webpack": "4.41.6",
     "webpack-cli": "3.3.12",
     "webpack-dev-server": "3.10.3"
+  },
+  "engines": {
+    "node": "10"
+  },
+  "dependencies": {
+
   }
 }
