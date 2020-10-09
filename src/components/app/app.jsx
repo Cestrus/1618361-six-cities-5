@@ -23,7 +23,7 @@ const App = () => {
         )}/>
         <Route path='/login' exact component={Login}/>
         <Route path='/favorites' exact component={Favorites}/>
-        <Route path='/offer' exact component={Room}/>
+        <Route path='/offer/:id' exact component={Room}/>
         <Redirect to='/'/>
       </Switch>
     </BrowserRouter>
