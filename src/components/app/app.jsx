@@ -20,23 +20,27 @@ class App extends PureComponent {
 
 
   render() {
+    const {login, password} = this.state;
+    const {cities, offers, reviews} = this.props;
     return (
       <BrowserRouter>
         <Switch>
           <Route path='/' exact render={() => (
             <Main
-              cities={this.props.cities}
-              offers={this.props.offers}
+              cities={cities}
+              offers={offers}
             />
           )}/>
           <Route path='/login' exact render={() => (
             <Login
+              login={login}
+              password={password}
             />
           )}/>
           <Route path='/favorites' exact component={Favorites}/>
           <Route path='/offer/:id' exact render={() => (
             <Room
-              reviews={this.props.reviews}
+              reviews={reviews}
             />
           )}/>
           <Redirect to='/'/>

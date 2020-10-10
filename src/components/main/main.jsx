@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Header from '../header/header';
 
+import Header from '../header/header';
+import PlaceCard from "../place-card/place-card";
+import LocationsItem from "../locations-item/locations-item";
 
 const Main = (props) => {
 
-  const {cities, placeCardsData} = props;
+  const {cities, offers} = props;
 
   return (
     <div className="page page--gray page--main">
@@ -15,36 +17,14 @@ const Main = (props) => {
         <div className="tabs">
           <section className="locations container">
             <ul className="locations__list tabs__list">
-              <li className="locations__item">
-                <a className="locations__item-link tabs__item" href="#">
-                  <span>{cities[0]}</span>
-                </a>
-              </li>
-              <li className="locations__item">
-                <a className="locations__item-link tabs__item" href="#">
-                  <span>{cities[1]}</span>
-                </a>
-              </li>
-              <li className="locations__item">
-                <a className="locations__item-link tabs__item" href="#">
-                  <span>{cities[2]}</span>
-                </a>
-              </li>
-              <li className="locations__item">
-                <a className="locations__item-link tabs__item tabs__item--active">
-                  <span>{cities[3]}</span>
-                </a>
-              </li>
-              <li className="locations__item">
-                <a className="locations__item-link tabs__item" href="#">
-                  <span>{cities[4]}</span>
-                </a>
-              </li>
-              <li className="locations__item">
-                <a className="locations__item-link tabs__item" href="#">
-                  <span>{cities[5]}</span>
-                </a>
-              </li>
+              {cities.map((city, index) => {
+                return (
+                  <LocationsItem
+                    key={index}
+                    city={city}
+                  />
+                );
+              })}
             </ul>
           </section>
         </div>
@@ -69,176 +49,18 @@ const Main = (props) => {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                <article className="cities__place-card place-card">
-                  <div className="place-card__mark">
-                    <span>Premium</span>
-                  </div>
-                  <div className="cities__image-wrapper place-card__image-wrapper">
-                    <a href="#">
-                      <img className="place-card__image" src={placeCardsData[0].imgURL} width="260" height="200" alt="Place image"/>
-                    </a>
-                  </div>
-                  <div className="place-card__info">
-                    <div className="place-card__price-wrapper">
-                      <div className="place-card__price">
-                        <b className="place-card__price-value">&euro;{placeCardsData[0].price}</b>
-                        <span className="place-card__price-text">&#47;&nbsp;night</span>
-                      </div>
-                      <button className="place-card__bookmark-button button" type="button">
-                        <svg className="place-card__bookmark-icon" width="18" height="19">
-                          <use href="#icon-bookmark"/>
-                        </svg>
-                        <span className="visually-hidden">To bookmarks</span>
-                      </button>
-                    </div>
-                    <div className="place-card__rating rating">
-                      <div className="place-card__stars rating__stars">
-                        <span style={{width: `80%`}}></span>
-                        <span className="visually-hidden">Rating</span>
-                      </div>
-                    </div>
-                    <h2 className="place-card__name">
-                      <a href="#">{placeCardsData[0].name}</a>
-                    </h2>
-                    <p className="place-card__type">{placeCardsData[0].type}</p>
-                  </div>
-                </article>
-
-                <article className="cities__place-card place-card">
-                  <div className="cities__image-wrapper place-card__image-wrapper">
-                    <a href="#">
-                      <img className="place-card__image" src={placeCardsData[1].imgURL} width="260" height="200" alt="Place image"/>
-                    </a>
-                  </div>
-                  <div className="place-card__info">
-                    <div className="place-card__price-wrapper">
-                      <div className="place-card__price">
-                        <b className="place-card__price-value">&euro;{placeCardsData[1].price}</b>
-                        <span className="place-card__price-text">&#47;&nbsp;night</span>
-                      </div>
-                      <button className="place-card__bookmark-button place-card__bookmark-button--active button" type="button">
-                        <svg className="place-card__bookmark-icon" width="18" height="19">
-                          <use href="#icon-bookmark"/>
-                        </svg>
-                        <span className="visually-hidden">In bookmarks</span>
-                      </button>
-                    </div>
-                    <div className="place-card__rating rating">
-                      <div className="place-card__stars rating__stars">
-                        <span style={{width: `80%`}}></span>
-                        <span className="visually-hidden">Rating</span>
-                      </div>
-                    </div>
-                    <h2 className="place-card__name">
-                      <a href="#">{placeCardsData[1].name}</a>
-                    </h2>
-                    <p className="place-card__type">{placeCardsData[1].type}</p>
-                  </div>
-                </article>
-
-                <article className="cities__place-card place-card">
-                  <div className="cities__image-wrapper place-card__image-wrapper">
-                    <a href="#">
-                      <img className="place-card__image" src={placeCardsData[2].imgURL} width="260" height="200" alt="Place image"/>
-                    </a>
-                  </div>
-                  <div className="place-card__info">
-                    <div className="place-card__price-wrapper">
-                      <div className="place-card__price">
-                        <b className="place-card__price-value">&euro;{placeCardsData[2].price}</b>
-                        <span className="place-card__price-text">&#47;&nbsp;night</span>
-                      </div>
-                      <button className="place-card__bookmark-button button" type="button">
-                        <svg className="place-card__bookmark-icon" width="18" height="19">
-                          <use href="#icon-bookmark"/>
-                        </svg>
-                        <span className="visually-hidden">To bookmarks</span>
-                      </button>
-                    </div>
-                    <div className="place-card__rating rating">
-                      <div className="place-card__stars rating__stars">
-                        <span style={{width: `80%`}}></span>
-                        <span className="visually-hidden">Rating</span>
-                      </div>
-                    </div>
-                    <h2 className="place-card__name">
-                      <a href="#">{placeCardsData[2].name}</a>
-                    </h2>
-                    <p className="place-card__type">{placeCardsData[2].type}</p>
-                  </div>
-                </article>
-
-                <article className="cities__place-card place-card">
-                  <div className="place-card__mark">
-                    <span>Premium</span>
-                  </div>
-                  <div className="cities__image-wrapper place-card__image-wrapper">
-                    <a href="#">
-                      <img className="place-card__image" src={placeCardsData[3].imgURL} width="260" height="200" alt="Place image"/>
-                    </a>
-                  </div>
-                  <div className="place-card__info">
-                    <div className="place-card__price-wrapper">
-                      <div className="place-card__price">
-                        <b className="place-card__price-value">&euro;{placeCardsData[3].price}</b>
-                        <span className="place-card__price-text">&#47;&nbsp;night</span>
-                      </div>
-                      <button className="place-card__bookmark-button button" type="button">
-                        <svg className="place-card__bookmark-icon" width="18" height="19">
-                          <use href="#icon-bookmark"/>
-                        </svg>
-                        <span className="visually-hidden">To bookmarks</span>
-                      </button>
-                    </div>
-                    <div className="place-card__rating rating">
-                      <div className="place-card__stars rating__stars">
-                        <span style={{width: `80%`}}></span>
-                        <span className="visually-hidden">Rating</span>
-                      </div>
-                    </div>
-                    <h2 className="place-card__name">
-                      <a href="#">{placeCardsData[3].name}</a>
-                    </h2>
-                    <p className="place-card__type">{placeCardsData[3].type}</p>
-                  </div>
-                </article>
-
-                <article className="cities__place-card place-card">
-                  <div className="cities__image-wrapper place-card__image-wrapper">
-                    <a href="#">
-                      <img className="place-card__image" src={placeCardsData[4].imgURL} width="260" height="200" alt="Place image"/>
-                    </a>
-                  </div>
-                  <div className="place-card__info">
-                    <div className="place-card__price-wrapper">
-                      <div className="place-card__price">
-                        <b className="place-card__price-value">&euro;{placeCardsData[4].price}</b>
-                        <span className="place-card__price-text">&#47;&nbsp;night</span>
-                      </div>
-                      <button className="place-card__bookmark-button place-card__bookmark-button--active button" type="button">
-                        <svg className="place-card__bookmark-icon" width="18" height="19">
-                          <use href="#icon-bookmark-active"/>
-                        </svg>
-                        <span className="visually-hidden">In bookmarks</span>
-                      </button>
-                    </div>
-                    <div className="place-card__rating rating">
-                      <div className="place-card__stars rating__stars">
-                        <span style={{width: `80%`}}></span>
-                        <span className="visually-hidden">Rating</span>
-                      </div>
-                    </div>
-                    <h2 className="place-card__name">
-                      <a href="#">{placeCardsData[4].name}</a>
-                    </h2>
-                    <p className="place-card__type">{placeCardsData[4].type}</p>
-                  </div>
-                </article>
-
+                {offers.map((offer) => {
+                  return (
+                    <PlaceCard
+                      key={offer.id}
+                      offer={offer}
+                    />
+                  );
+                })}
               </div>
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"></section>
+              <section className="cities__map map"/>
             </div>
           </div>
         </div>
@@ -249,11 +71,16 @@ const Main = (props) => {
 
 Main.propTypes = {
   cities: PropTypes.arrayOf(PropTypes.string),
-  placeCardsData: PropTypes.arrayOf(PropTypes.shape({
+  offers: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
     imgURL: PropTypes.string,
     price: PropTypes.number,
-    name: PropTypes.string,
+    description: PropTypes.string,
     type: PropTypes.string,
+    isPremium: PropTypes.bool,
+    bedrooms: PropTypes.number,
+    maxAdults: PropTypes.number,
+    whatsInside: PropTypes.arrayOf(PropTypes.string),
   })),
 };
 
