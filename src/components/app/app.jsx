@@ -37,7 +37,11 @@ class App extends PureComponent {
               password={password}
             />
           )}/>
-          <Route path='/favorites' exact component={Favorites}/>
+          <Route path='/favorites' exact render={() => (
+            <Favorites
+
+            />
+          )}/>
           <Route path='/offer/:id' exact render={() => (
             <Room
               reviews={reviews}

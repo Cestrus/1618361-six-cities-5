@@ -2,13 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const PlaceCard = (props) => {
-  const {imgURL, price, description, type, isPremium, rating} = props.offer;
+  const offer = props.offer;
+  const {imgURL, price, description, type, isPremium, rating} = offer;
   const onPlaceCardClick = props.onPlaceCardClick;
+  const onPlaceCardMouseEnter = props.onPlaceCardMouseEnter;
 
   return (
     <article
       className="cities__place-card place-card"
-      onClick={(ev)=> onPlaceCardClick(ev)}
+      onClick={(ev) => onPlaceCardClick(ev)}
+      onMouseEnter={() => onPlaceCardMouseEnter(offer)}
     >
       {
         (isPremium) ? <div className="place-card__mark"><span>Premium</span></div> : null
@@ -56,6 +59,7 @@ PlaceCard.propTypes = {
     rating: PropTypes.number,
   }),
   onPlaceCardClick: PropTypes.func,
+  onPlaceCardMouseEnter: PropTypes.func,
 };
 
 export default PlaceCard;
