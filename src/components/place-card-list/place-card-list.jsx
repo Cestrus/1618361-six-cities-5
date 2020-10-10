@@ -1,11 +1,11 @@
 import React, {PureComponent} from 'react';
+// import {Link} from "react-router-dom";
 import PropTypes from 'prop-types';
 import PlaceCard from "../place-card/place-card";
 
 class PlaceCardList extends PureComponent {
   constructor(props) {
     super(props);
-
     this.offers = props.offers;
     this.handlePlaceCardClick = this.handlePlaceCardClick.bind(this);
     this.handlePlaceCardMouseEnter = this.handlePlaceCardMouseEnter.bind(this);
@@ -21,9 +21,8 @@ class PlaceCardList extends PureComponent {
     });
   }
 
-  handlePlaceCardClick(ev) {
-    // eslint-disable-next-line no-console
-    console.log(ev);
+  handlePlaceCardClick() {
+    // some logic
   }
 
   render() {
@@ -47,14 +46,17 @@ class PlaceCardList extends PureComponent {
 PlaceCardList.propTypes = {
   offers: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
+    city: PropTypes.string,
     imgURL: PropTypes.string,
     price: PropTypes.number,
     description: PropTypes.string,
     type: PropTypes.string,
     isPremium: PropTypes.bool,
+    isFavorites: PropTypes.bool,
     bedrooms: PropTypes.number,
     maxAdults: PropTypes.number,
     whatsInside: PropTypes.arrayOf(PropTypes.string),
+    rating: PropTypes.number,
   })),
   onPlaceCardClick: PropTypes.func,
 };

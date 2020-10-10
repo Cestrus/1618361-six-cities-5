@@ -4,13 +4,14 @@ import PropTypes from 'prop-types';
 const PlaceCard = (props) => {
   const offer = props.offer;
   const {imgURL, price, description, type, isPremium, rating} = offer;
+
   const onPlaceCardClick = props.onPlaceCardClick;
   const onPlaceCardMouseEnter = props.onPlaceCardMouseEnter;
 
   return (
     <article
       className="cities__place-card place-card"
-      onClick={(ev) => onPlaceCardClick(ev)}
+      onClick={onPlaceCardClick}
       onMouseEnter={() => onPlaceCardMouseEnter(offer)}
     >
       {
@@ -51,11 +52,17 @@ const PlaceCard = (props) => {
 
 PlaceCard.propTypes = {
   offer: PropTypes.shape({
+    id: PropTypes.number,
+    city: PropTypes.string,
     imgURL: PropTypes.string,
     price: PropTypes.number,
     description: PropTypes.string,
     type: PropTypes.string,
     isPremium: PropTypes.bool,
+    isFavorites: PropTypes.bool,
+    bedrooms: PropTypes.number,
+    maxAdults: PropTypes.number,
+    whatsInside: PropTypes.arrayOf(PropTypes.string),
     rating: PropTypes.number,
   }),
   onPlaceCardClick: PropTypes.func,

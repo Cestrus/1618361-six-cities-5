@@ -13,15 +13,17 @@ class App extends PureComponent {
     super(props);
 
     this.state = {
-      login: null,
-      password: null,
+      user: {
+        email: null,
+        password: null,
+      }
     };
   }
 
-
   render() {
-    const {login, password} = this.state;
+    const {user} = this.state;
     const {cities, offers, reviews} = this.props;
+
     return (
       <BrowserRouter>
         <Switch>
@@ -33,17 +35,17 @@ class App extends PureComponent {
           )}/>
           <Route path='/login' exact render={() => (
             <Login
-              login={login}
-              password={password}
+              user={user}
             />
           )}/>
           <Route path='/favorites' exact render={() => (
             <Favorites
-
+              offers={offers}
             />
           )}/>
           <Route path='/offer/:id' exact render={() => (
             <Room
+              offers={offers}
               reviews={reviews}
             />
           )}/>
@@ -58,14 +60,17 @@ App.propTypes = {
   cities: PropTypes.arrayOf(PropTypes.string),
   offers: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
+    city: PropTypes.string,
     imgURL: PropTypes.string,
     price: PropTypes.number,
     description: PropTypes.string,
     type: PropTypes.string,
     isPremium: PropTypes.bool,
+    isFavorites: PropTypes.bool,
     bedrooms: PropTypes.number,
     maxAdults: PropTypes.number,
     whatsInside: PropTypes.arrayOf(PropTypes.string),
+    rating: PropTypes.number,
   })),
   reviews: PropTypes.arrayOf(PropTypes.shape({
     offerID: PropTypes.number,
