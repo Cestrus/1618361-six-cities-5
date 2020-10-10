@@ -9,6 +9,7 @@ const offers = [
     bedrooms: 3,
     maxAdults: 4,
     whatsInside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
+    rating: 5,
   },
   {
     id: 2,
@@ -20,7 +21,7 @@ const offers = [
     bedrooms: 2,
     maxAdults: 3,
     whatsInside: [`Wi-Fi`, `Kitchen`, `Fridge`, `Washing machine`, `Dishwasher`, `Towels`, `Cabel TV`],
-    stars: 4,
+    rating: 4,
   },
   {
     id: 3,
@@ -32,7 +33,7 @@ const offers = [
     bedrooms: 2,
     maxAdults: 3,
     whatsInside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Dishwasher`, `Towels`, `Cabel TV`],
-    stars: 4,
+    rating: 4,
   },
   {
     id: 4,
@@ -44,7 +45,7 @@ const offers = [
     bedrooms: 3,
     maxAdults: 4,
     whatsInside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
-    stars: 5,
+    rating: 5,
   },
   {
     id: 5,
@@ -56,7 +57,7 @@ const offers = [
     bedrooms: 3,
     maxAdults: 4,
     whatsInside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
-    stars: 5,
+    rating: 5,
   }
 ];
 

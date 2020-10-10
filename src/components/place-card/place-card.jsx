@@ -2,16 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const PlaceCard = (props) => {
-  const {imgURL, price, description, type, isPremium} = props.offer;
+  const {imgURL, price, description, type, isPremium, rating} = props.offer;
+  const onPlaceCardClick = props.onPlaceCardClick;
 
   return (
-    <article className="cities__place-card place-card">
+    <article
+      className="cities__place-card place-card"
+      onClick={(ev)=> onPlaceCardClick(ev)}
+    >
       {
         (isPremium) ? <div className="place-card__mark"><span>Premium</span></div> : null
       }
       <div className="cities__image-wrapper place-card__image-wrapper">
         <a href="#">
-          <img className="place-card__image" src={imgURL} width="260" height="200" alt="Place image"/>
+          <img className="place-card__image" src={imgURL} width="260" height="200" alt="Place image" />
         </a>
       </div>
       <div className="place-card__info">
@@ -29,7 +33,7 @@ const PlaceCard = (props) => {
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{width: `80%`}}/>
+            <span style={{width: `${rating * 20}%`}}/>
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
@@ -49,8 +53,9 @@ PlaceCard.propTypes = {
     description: PropTypes.string,
     type: PropTypes.string,
     isPremium: PropTypes.bool,
-
-  })
+    rating: PropTypes.number,
+  }),
+  onPlaceCardClick: PropTypes.func,
 };
 
 export default PlaceCard;
