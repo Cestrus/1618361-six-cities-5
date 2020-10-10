@@ -6,7 +6,6 @@ import PlaceCard from "../place-card/place-card";
 import LocationsItem from "../locations-item/locations-item";
 
 const Main = (props) => {
-
   const {cities, offers} = props;
 
   return (

@@ -1,14 +1,14 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 const PlaceCard = (props) => {
-  const {imgURL, price, description, type} = props.offer;
+  const {imgURL, price, description, type, isPremium} = props.offer;
 
   return (
     <article className="cities__place-card place-card">
-      <div className="place-card__mark">
-        <span>Premium</span>
-      </div>
+      {
+        (isPremium) ? <div className="place-card__mark"><span>Premium</span></div> : null
+      }
       <div className="cities__image-wrapper place-card__image-wrapper">
         <a href="#">
           <img className="place-card__image" src={imgURL} width="260" height="200" alt="Place image"/>
@@ -40,6 +40,17 @@ const PlaceCard = (props) => {
       </div>
     </article>
   );
+};
+
+PlaceCard.propTypes = {
+  offer: PropTypes.shape({
+    imgURL: PropTypes.string,
+    price: PropTypes.number,
+    description: PropTypes.string,
+    type: PropTypes.string,
+    isPremium: PropTypes.bool,
+
+  })
 };
 
 export default PlaceCard;
