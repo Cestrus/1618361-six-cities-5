@@ -38,7 +38,7 @@ class FormSendComment extends PureComponent {
         onSubmit={this.handleSubmit}
       >
         <label className="reviews__label form__label" htmlFor="review">Your review</label>
-        <StarLine onInputRatingClick={this.handleInputRatingClick()}/>
+        <StarLine onInputRatingClick={this.handleInputRatingClick}/>
         <textarea
           className="reviews__textarea form__textarea"
           id="review"

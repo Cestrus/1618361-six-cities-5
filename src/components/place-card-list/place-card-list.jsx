@@ -8,6 +8,7 @@ class PlaceCardList extends PureComponent {
     super(props);
     this.history = props.history;
     this.offers = props.offers;
+    this.page = props.page;
     this.handlePlaceCardClick = this.handlePlaceCardClick.bind(this);
     this.handlePlaceCardMouseEnter = this.handlePlaceCardMouseEnter.bind(this);
 
@@ -27,8 +28,12 @@ class PlaceCardList extends PureComponent {
   }
 
   render() {
+    const styleClasses = (this.page === `main`)
+      ? `cities__places-list places__list tabs__content`
+      : `near-places__list places__list`;
+
     return (
-      <div className="cities__places-list places__list tabs__content">
+      <div className={styleClasses}>
         {this.offers.map((offer) => {
           return (
             <PlaceCard
@@ -60,6 +65,7 @@ PlaceCardList.propTypes = {
     rating: PropTypes.number,
   })),
   history: PropTypes.object,
+  page: PropTypes.string,
 };
 
 export default withRouter(PlaceCardList);

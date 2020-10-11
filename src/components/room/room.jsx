@@ -4,6 +4,8 @@ import {withRouter} from "react-router-dom";
 
 import Header from '../header/header';
 import FormSendComment from "../form-send-comment/form-send-comment";
+import PlaceCardList from "../place-card-list/place-card-list";
+import InsideItemList from "../inside-item-list/inside-item-list";
 
 const Room = (props) => {
   const {offers, reviews} = props;
@@ -62,38 +64,7 @@ const Room = (props) => {
               </div>
               <div className="property__inside">
                 <h2 className="property__inside-title">What&apos;s inside</h2>
-                <ul className="property__inside-list">
-                  <li className="property__inside-item">
-                    Wi-Fi
-                  </li>
-                  <li className="property__inside-item">
-                    Washing machine
-                  </li>
-                  <li className="property__inside-item">
-                    Towels
-                  </li>
-                  <li className="property__inside-item">
-                    Heating
-                  </li>
-                  <li className="property__inside-item">
-                    Coffee machine
-                  </li>
-                  <li className="property__inside-item">
-                    Baby seat
-                  </li>
-                  <li className="property__inside-item">
-                    Kitchen
-                  </li>
-                  <li className="property__inside-item">
-                    Dishwasher
-                  </li>
-                  <li className="property__inside-item">
-                    Cabel TV
-                  </li>
-                  <li className="property__inside-item">
-                    Fridge
-                  </li>
-                </ul>
+                <InsideItemList/>
               </div>
               <div className="property__host">
                 <h2 className="property__host-title">Meet the host</h2>
@@ -149,103 +120,10 @@ const Room = (props) => {
         <div className="container">
           <section className="near-places places">
             <h2 className="near-places__title">Other places in the neighbourhood</h2>
-            <div className="near-places__list places__list">
-              <article className="near-places__card place-card">
-                <div className="near-places__image-wrapper place-card__image-wrapper">
-                  <a href="#">
-                    <img className="place-card__image" src="img/room.jpg" width="260" height="200" alt="Place image"/>
-                  </a>
-                </div>
-                <div className="place-card__info">
-                  <div className="place-card__price-wrapper">
-                    <div className="place-card__price">
-                      <b className="place-card__price-value">&euro;80</b>
-                      <span className="place-card__price-text">&#47;&nbsp;night</span>
-                    </div>
-                    <button className="place-card__bookmark-button place-card__bookmark-button--active button" type="button">
-                      <svg className="place-card__bookmark-icon" width="18" height="19">
-                        <use href="#icon-bookmark"/>
-                      </svg>
-                      <span className="visually-hidden">In bookmarks</span>
-                    </button>
-                  </div>
-                  <div className="place-card__rating rating">
-                    <div className="place-card__stars rating__stars">
-                      <span style={{width: `80%`}}/>
-                      <span className="visually-hidden">Rating</span>
-                    </div>
-                  </div>
-                  <h2 className="place-card__name">
-                    <a href="#">Wood and stone place</a>
-                  </h2>
-                  <p className="place-card__type">Private room</p>
-                </div>
-              </article>
-
-              <article className="near-places__card place-card">
-                <div className="near-places__image-wrapper place-card__image-wrapper">
-                  <a href="#">
-                    <img className="place-card__image" src="img/apartment-02.jpg" width="260" height="200" alt="Place image"/>
-                  </a>
-                </div>
-                <div className="place-card__info">
-                  <div className="place-card__price-wrapper">
-                    <div className="place-card__price">
-                      <b className="place-card__price-value">&euro;132</b>
-                      <span className="place-card__price-text">&#47;&nbsp;night</span>
-                    </div>
-                    <button className="place-card__bookmark-button button" type="button">
-                      <svg className="place-card__bookmark-icon" width="18" height="19">
-                        <use href="#icon-bookmark"/>
-                      </svg>
-                      <span className="visually-hidden">To bookmarks</span>
-                    </button>
-                  </div>
-                  <div className="place-card__rating rating">
-                    <div className="place-card__stars rating__stars">
-                      <span style={{width: `80%`}}/>
-                      <span className="visually-hidden">Rating</span>
-                    </div>
-                  </div>
-                  <h2 className="place-card__name">
-                    <a href="#">Canal View Prinsengracht</a>
-                  </h2>
-                  <p className="place-card__type">Apartment</p>
-                </div>
-              </article>
-
-              <article className="near-places__card place-card">
-                <div className="near-places__image-wrapper place-card__image-wrapper">
-                  <a href="#">
-                    <img className="place-card__image" src="img/apartment-03.jpg" width="260" height="200" alt="Place image"/>
-                  </a>
-                </div>
-                <div className="place-card__info">
-                  <div className="place-card__price-wrapper">
-                    <div className="place-card__price">
-                      <b className="place-card__price-value">&euro;180</b>
-                      <span className="place-card__price-text">&#47;&nbsp;night</span>
-                    </div>
-                    <button className="place-card__bookmark-button button" type="button">
-                      <svg className="place-card__bookmark-icon" width="18" height="19">
-                        <use href="#icon-bookmark"/>
-                      </svg>
-                      <span className="visually-hidden">To bookmarks</span>
-                    </button>
-                  </div>
-                  <div className="place-card__rating rating">
-                    <div className="place-card__stars rating__stars">
-                      <span style={{width: `100%`}}/>
-                      <span className="visually-hidden">Rating</span>
-                    </div>
-                  </div>
-                  <h2 className="place-card__name">
-                    <a href="#">Nice, cozy, warm big bed apartment</a>
-                  </h2>
-                  <p className="place-card__type">Apartment</p>
-                </div>
-              </article>
-            </div>
+            <PlaceCardList
+              offers={offers}
+              page="room"
+            />
           </section>
         </div>
       </main>
@@ -253,5 +131,34 @@ const Room = (props) => {
   );
 };
 
+Room.propTypes = {
+  offers: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    city: PropTypes.string,
+    imgURL: PropTypes.string,
+    price: PropTypes.number,
+    description: PropTypes.string,
+    type: PropTypes.string,
+    isPremium: PropTypes.bool,
+    isFavorites: PropTypes.bool,
+    bedrooms: PropTypes.number,
+    maxAdults: PropTypes.number,
+    whatsInside: PropTypes.arrayOf(PropTypes.string),
+    rating: PropTypes.number,
+  })),
+  reviews: PropTypes.arrayOf(PropTypes.shape({
+    offerID: PropTypes.number,
+    reviews: PropTypes.arrayOf(PropTypes.shape({
+      author: PropTypes.string,
+      img: PropTypes.string,
+      review: PropTypes.string,
+      date: PropTypes.shape({
+        day: PropTypes.number,
+        month: PropTypes.string,
+        year: PropTypes.number
+      })
+    }))
+  }))
+};
 
 export default withRouter(Room);
