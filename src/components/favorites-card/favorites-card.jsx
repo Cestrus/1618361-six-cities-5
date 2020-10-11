@@ -40,11 +40,20 @@ const FavoritesCard = (props) => {
 };
 
 FavoritesCard.propTypes = {
-  imgURL: PropTypes.string,
-  price: PropTypes.number,
-  description: PropTypes.string,
-  type: PropTypes.string,
-  rating: PropTypes.number,
+  offer: PropTypes.shape({
+    id: PropTypes.number,
+    city: PropTypes.string,
+    imgURL: PropTypes.string,
+    price: PropTypes.number,
+    description: PropTypes.string,
+    type: PropTypes.string,
+    isPremium: PropTypes.bool,
+    isFavorites: PropTypes.bool,
+    bedrooms: PropTypes.number,
+    maxAdults: PropTypes.number,
+    whatsInside: PropTypes.arrayOf(PropTypes.string),
+    rating: PropTypes.number,
+  }),
 };
 
 export default FavoritesCard;

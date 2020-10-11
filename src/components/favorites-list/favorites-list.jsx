@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FavoritesLocationList from "../favorites-card/favorites-card";
+import FavoritesLocationList from "../favorites-location-list/favorites-location-list";
 
 const FavoritesList = (props) => {
   const {offers, cities} = props;
@@ -10,7 +10,7 @@ const FavoritesList = (props) => {
     for (let i = 0; i < cities.length; i++) {
       let offersByCity = [];
       for (let j = 0; j < offers.length; j++) {
-        if (cities[i] === offers[j].city) {
+        if (cities[i] === offers[j].city && offers[j].isFavorites) {
           offersByCity.push(offers[j]);
         }
       }
