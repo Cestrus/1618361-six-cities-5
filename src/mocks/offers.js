@@ -1,5 +1,19 @@
 const offers = [
   {
+    id: 0,
+    city: `Dusseldorf`,
+    imgURL: `img/apartment-03.jpg`,
+    price: 90,
+    description: `Beautiful apartment at great location`,
+    type: `Apartment`,
+    isPremium: false,
+    isFavorites: false,
+    bedrooms: 2,
+    maxAdults: 3,
+    whatsInside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Dishwasher`, `Towels`],
+    rating: 3,
+  },
+  {
     id: 1,
     city: `Paris`,
     imgURL: `img/apartment-01.jpg`,

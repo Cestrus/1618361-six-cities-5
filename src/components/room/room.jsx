@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import {withRouter} from "react-router-dom";
 import Header from '../header/header';
 
-// import {galleryImgRoomMock as galleryImgRoom} from '../../mocks/galleryImgRoomMock';
-
-const Room = () => {
-
+const Room = (props) => {
+  const {offers, reviews} = props;
+  // const chosenRoom = offers[props.match.params.id];
   return (
     <div className="page">
       <Header/>
@@ -12,31 +13,18 @@ const Room = () => {
         <section className="property">
           <div className="property__gallery-container container">
             <div className="property__gallery">
-              <div className="property__image-wrapper">
-                <img className="property__image" src="img/room.jpg" alt="Photo studio"/>
-              </div>
-              <div className="property__image-wrapper">
-                <img className="property__image" src="img/apartment-01.jpg" alt="Photo studio"/>
-              </div>
-              <div className="property__image-wrapper">
-                <img className="property__image" src="img/apartment-02.jpg" alt="Photo studio"/>
-              </div>
-              <div className="property__image-wrapper">
-                <img className="property__image" src="img/apartment-03.jpg" alt="Photo studio"/>
-              </div>
-              <div className="property__image-wrapper">
-                <img className="property__image" src="img/studio-01.jpg" alt="Photo studio"/>
-              </div>
-              <div className="property__image-wrapper">
-                <img className="property__image" src="img/apartment-01.jpg" alt="Photo studio"/>
-              </div>
+              {/*{offers.map((offer) => {*/}
+              {/*  return (*/}
+              {/*    <div className="property__image-wrapper" key={offer.id}>*/}
+              {/*      <img className="property__image" src={offer.imgURL} alt="Photo studio"/>*/}
+              {/*    </div>*/}
+              {/*  );*/}
+              {/*})}*/}
             </div>
           </div>
           <div className="property__container container">
             <div className="property__wrapper">
-              <div className="property__mark">
-                <span>Premium</span>
-              </div>
+              {/*{(chosenRoom.isPremium) ? <div className="property__mark"><span>Premium</span></div> : null}*/}
               <div className="property__name-wrapper">
                 <h1 className="property__name">
                   Beautiful &amp; luxurious studio at great location
@@ -50,7 +38,7 @@ const Room = () => {
               </div>
               <div className="property__rating rating">
                 <div className="property__stars rating__stars">
-                  <span style={{width: `80%`}}></span>
+                  <span style={{width: `80%`}}/>
                   <span className="visually-hidden">Rating</span>
                 </div>
                 <span className="property__rating-value rating__value">4.8</span>
@@ -139,7 +127,7 @@ const Room = () => {
                     <div className="reviews__info">
                       <div className="reviews__rating rating">
                         <div className="reviews__stars rating__stars">
-                          <span style={{width: `80%`}}></span>
+                          <span style={{width: `80%`}}/>
                           <span className="visually-hidden">Rating</span>
                         </div>
                       </div>
@@ -226,7 +214,7 @@ const Room = () => {
                   </div>
                   <div className="place-card__rating rating">
                     <div className="place-card__stars rating__stars">
-                      <span style={{width: `80%`}}></span>
+                      <span style={{width: `80%`}}/>
                       <span className="visually-hidden">Rating</span>
                     </div>
                   </div>
@@ -258,7 +246,7 @@ const Room = () => {
                   </div>
                   <div className="place-card__rating rating">
                     <div className="place-card__stars rating__stars">
-                      <span style={{width: `80%`}}></span>
+                      <span style={{width: `80%`}}/>
                       <span className="visually-hidden">Rating</span>
                     </div>
                   </div>
@@ -290,7 +278,7 @@ const Room = () => {
                   </div>
                   <div className="place-card__rating rating">
                     <div className="place-card__stars rating__stars">
-                      <span style={{width: `100%`}}></span>
+                      <span style={{width: `100%`}}/>
                       <span className="visually-hidden">Rating</span>
                     </div>
                   </div>
@@ -308,4 +296,4 @@ const Room = () => {
   );
 };
 
-export default Room;
+export default withRouter(Room);

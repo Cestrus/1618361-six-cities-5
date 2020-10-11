@@ -11,12 +11,13 @@ import Favorites from '../favorites/favorites';
 class App extends PureComponent {
   constructor(props) {
     super(props);
+    this.props = props;
 
     this.state = {
       user: {
         email: null,
         password: null,
-      }
+      },
     };
   }
 
@@ -40,6 +41,7 @@ class App extends PureComponent {
           )}/>
           <Route path='/favorites' exact render={() => (
             <Favorites
+              cities={cities}
               offers={offers}
             />
           )}/>

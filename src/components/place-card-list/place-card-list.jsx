@@ -1,28 +1,29 @@
 import React, {PureComponent} from 'react';
-// import {Link} from "react-router-dom";
+import {withRouter} from "react-router-dom";
 import PropTypes from 'prop-types';
 import PlaceCard from "../place-card/place-card";
 
 class PlaceCardList extends PureComponent {
   constructor(props) {
     super(props);
+    this.history = props.history;
     this.offers = props.offers;
     this.handlePlaceCardClick = this.handlePlaceCardClick.bind(this);
     this.handlePlaceCardMouseEnter = this.handlePlaceCardMouseEnter.bind(this);
 
     this.state = {
-      chosenPlaceCard: null,
+      chosenRoom: null,
     };
   }
 
   handlePlaceCardMouseEnter(offer) {
     this.setState({
-      chosenPlaceCard: offer,
+      chosenRoom: offer,
     });
   }
 
   handlePlaceCardClick() {
-    // some logic
+    this.history.push(`/offer/` + this.state.chosenRoom.id);
   }
 
   render() {
@@ -33,8 +34,8 @@ class PlaceCardList extends PureComponent {
             <PlaceCard
               key={offer.id}
               offer={offer}
-              onPlaceCardClick={this.handlePlaceCardClick}
               onPlaceCardMouseEnter={this.handlePlaceCardMouseEnter}
+              onPlaceCardClick={this.handlePlaceCardClick}
             />
           );
         })}
@@ -58,7 +59,7 @@ PlaceCardList.propTypes = {
     whatsInside: PropTypes.arrayOf(PropTypes.string),
     rating: PropTypes.number,
   })),
-  onPlaceCardClick: PropTypes.func,
+  history: PropTypes.object,
 };
 
-export default PlaceCardList;
+export default withRouter(PlaceCardList);
