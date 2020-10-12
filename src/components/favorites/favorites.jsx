@@ -28,20 +28,7 @@ const Favorites = (props) => {
 };
 
 Favorites.propTypes = {
-  offers: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
-    city: PropTypes.string,
-    imgURL: PropTypes.string,
-    price: PropTypes.number,
-    description: PropTypes.string,
-    type: PropTypes.string,
-    isPremium: PropTypes.bool,
-    isFavorites: PropTypes.bool,
-    bedrooms: PropTypes.number,
-    maxAdults: PropTypes.number,
-    whatsInside: PropTypes.arrayOf(PropTypes.string),
-    rating: PropTypes.number,
-  })),
+  offers: PropTypes.array,
   cities: PropTypes.arrayOf(PropTypes.string),
 };
 

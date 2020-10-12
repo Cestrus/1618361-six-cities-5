@@ -17,18 +17,18 @@ const Room = (props) => {
         <section className="property">
           <div className="property__gallery-container container">
             <div className="property__gallery">
-              {/*{offers.map((offer) => {*/}
-              {/*  return (*/}
-              {/*    <div className="property__image-wrapper" key={offer.id}>*/}
-              {/*      <img className="property__image" src={offer.imgURL} alt="Photo studio"/>*/}
-              {/*    </div>*/}
-              {/*  );*/}
-              {/*})}*/}
+              {offers.map((offer) => {
+                return (
+                  <div className="property__image-wrapper" key={offer.id}>
+                    <img className="property__image" src={offer.imgURL} alt="Photo studio"/>
+                  </div>
+                );
+              })}
             </div>
           </div>
           <div className="property__container container">
             <div className="property__wrapper">
-              {/*{(chosenRoom.isPremium) ? <div className="property__mark"><span>Premium</span></div> : null}*/}
+              {/* {(chosenRoom.isPremium) ? <div className="property__mark"><span>Premium</span></div> : null} */}
               <div className="property__name-wrapper">
                 <h1 className="property__name">
                   Beautiful &amp; luxurious studio at great location
@@ -107,33 +107,8 @@ const Room = (props) => {
 };
 
 Room.propTypes = {
-  offers: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
-    city: PropTypes.string,
-    imgURL: PropTypes.string,
-    price: PropTypes.number,
-    description: PropTypes.string,
-    type: PropTypes.string,
-    isPremium: PropTypes.bool,
-    isFavorites: PropTypes.bool,
-    bedrooms: PropTypes.number,
-    maxAdults: PropTypes.number,
-    whatsInside: PropTypes.arrayOf(PropTypes.string),
-    rating: PropTypes.number,
-  })),
-  reviews: PropTypes.arrayOf(PropTypes.shape({
-    offerID: PropTypes.number,
-    reviews: PropTypes.arrayOf(PropTypes.shape({
-      author: PropTypes.string,
-      img: PropTypes.string,
-      review: PropTypes.string,
-      date: PropTypes.shape({
-        day: PropTypes.number,
-        month: PropTypes.string,
-        year: PropTypes.number
-      })
-    }))
-  }))
+  offers: PropTypes.array,
+  reviews: PropTypes.array,
 };
 
 export default withRouter(Room);

@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link, withRouter} from 'react-router-dom';
 
 const FavoritesCard = (props) => {
-  const {imgURL, price, description, type, rating} = props.offer;
+  const {id, imgURL, price, description, type, rating} = props.offer;
 
   return (
     <article className="favorites__card place-card">
       <div className="favorites__image-wrapper place-card__image-wrapper">
-        <a href="#">
+        <Link to={`/offer/` + id}>
           <img className="place-card__image" src={imgURL} width="150" height="110" alt="Place image"/>
-        </a>
+        </Link>
       </div>
       <div className="favorites__card-info place-card__info">
         <div className="place-card__price-wrapper">
@@ -42,18 +43,12 @@ const FavoritesCard = (props) => {
 FavoritesCard.propTypes = {
   offer: PropTypes.shape({
     id: PropTypes.number,
-    city: PropTypes.string,
     imgURL: PropTypes.string,
     price: PropTypes.number,
     description: PropTypes.string,
     type: PropTypes.string,
-    isPremium: PropTypes.bool,
-    isFavorites: PropTypes.bool,
-    bedrooms: PropTypes.number,
-    maxAdults: PropTypes.number,
-    whatsInside: PropTypes.arrayOf(PropTypes.string),
     rating: PropTypes.number,
   }),
 };
 
-export default FavoritesCard;
+export default withRouter(FavoritesCard);

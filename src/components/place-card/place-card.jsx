@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link, withRouter} from 'react-router-dom';
 
 const PlaceCard = (props) => {
   const offer = props.offer;
@@ -18,9 +19,9 @@ const PlaceCard = (props) => {
         (isPremium) ? <div className="place-card__mark"><span>Premium</span></div> : null
       }
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <a href="#">
+        <Link to={`/offer/` + offer.id}>
           <img className="place-card__image" src={imgURL} width="260" height="200" alt="Place image" />
-        </a>
+        </Link>
       </div>
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
@@ -69,4 +70,4 @@ PlaceCard.propTypes = {
   onPlaceCardMouseEnter: PropTypes.func,
 };
 
-export default PlaceCard;
+export default withRouter(PlaceCard);

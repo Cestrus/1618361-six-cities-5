@@ -35,10 +35,7 @@ class FormLogin extends PureComponent {
 }
 
 FormLogin.propTypes = {
-  user: PropTypes.objectOf(PropTypes.shape({
-    email: PropTypes.string,
-    password: PropTypes.string,
-  }))
+  user: PropTypes.object,
 };
 
 export default FormLogin;

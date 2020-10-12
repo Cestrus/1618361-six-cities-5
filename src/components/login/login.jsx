@@ -32,10 +32,7 @@ const Login = (props) => {
 };
 
 Login.propTypes = {
-  user: PropTypes.objectOf(PropTypes.shape({
-    email: PropTypes.string,
-    password: PropTypes.string,
-  }))
+  user: PropTypes.object,
 };
 
 export default Login;

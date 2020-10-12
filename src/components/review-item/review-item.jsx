@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 const ReviewItem = (props) => {
   const {img, author, comment, date} = props.review;
-  // console.log('+++', props);
   return (
     <li className="reviews__item">
       <div className="reviews__user user">
@@ -29,15 +28,7 @@ const ReviewItem = (props) => {
 };
 
 ReviewItem.propTypes = {
-  img: PropTypes.string,
-  author: PropTypes.string,
-  comment: PropTypes.string,
-  date: PropTypes.objectOf({
-    year: PropTypes.number,
-    month: PropTypes.string,
-    monthLetter: PropTypes.string,
-    day: PropTypes.number,
-  }),
+  review: PropTypes.object,
 };
 
 export default ReviewItem;
