@@ -4,11 +4,8 @@ import {OfferPropTypes} from "../../propTypes";
 import {Link, withRouter} from 'react-router-dom';
 
 const PlaceCard = (props) => {
-  const offer = props.offer;
+  const {offer, onPlaceCardClick, onPlaceCardMouseEnter} = props;
   const {imgURL, price, description, type, isPremium, rating} = offer;
-
-  const onPlaceCardClick = props.onPlaceCardClick;
-  const onPlaceCardMouseEnter = props.onPlaceCardMouseEnter;
 
   return (
     <article

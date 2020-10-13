@@ -5,7 +5,7 @@ import {UserPropTypes} from '../../propTypes';
 class FormLogin extends PureComponent {
   constructor(props) {
     super(props);
-    this.user = props.user;
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 

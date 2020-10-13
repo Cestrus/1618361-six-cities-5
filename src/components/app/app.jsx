@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
+import {Switch, Route, Redirect} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {OfferPropTypes, ReviewPropTypes} from '../../propTypes';
 
@@ -12,7 +12,6 @@ import Favorites from '../favorites/favorites';
 class App extends PureComponent {
   constructor(props) {
     super(props);
-    this.props = props;
 
     this.state = {
       user: {

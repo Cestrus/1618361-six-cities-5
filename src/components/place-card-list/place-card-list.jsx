@@ -7,9 +7,7 @@ import PlaceCard from "../place-card/place-card";
 class PlaceCardList extends PureComponent {
   constructor(props) {
     super(props);
-    this.history = props.history;
-    this.offers = props.offers;
-    this.page = props.page;
+
     this.handlePlaceCardClick = this.handlePlaceCardClick.bind(this);
     this.handlePlaceCardMouseEnter = this.handlePlaceCardMouseEnter.bind(this);
 
@@ -19,9 +17,12 @@ class PlaceCardList extends PureComponent {
   }
 
   handlePlaceCardMouseEnter(offer) {
-    this.setState({
-      chosenRoom: offer,
-    });
+    const oldChosenRoom = this.state.chosenRoom;
+    if (offer !== oldChosenRoom) {
+      this.setState({
+        chosenRoom: offer,
+      });
+    }
   }
 
   handlePlaceCardClick() {
@@ -29,13 +30,13 @@ class PlaceCardList extends PureComponent {
   }
 
   render() {
-    const styleClasses = (this.page === `main`)
+    const styleClasses = (this.props.page === `main`)
       ? `cities__places-list places__list tabs__content`
       : `near-places__list places__list`;
 
     return (
       <div className={styleClasses}>
-        {this.offers.map((offer) => {
+        {this.props.offers.map((offer) => {
           return (
             <PlaceCard
               key={offer.id}
@@ -52,7 +53,6 @@ class PlaceCardList extends PureComponent {
 
 PlaceCardList.propTypes = {
   offers: PropTypes.arrayOf(OfferPropTypes).isRequired,
-  history: PropTypes.object.isRequired,
   page: PropTypes.string.isRequired,
 };
 

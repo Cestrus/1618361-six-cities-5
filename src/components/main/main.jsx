@@ -17,10 +17,10 @@ const Main = (props) => {
         <div className="tabs">
           <section className="locations container">
             <ul className="locations__list tabs__list">
-              {cities.map((city, index) => {
+              {cities.map((city) => {
                 return (
                   <LocationsItem
-                    key={index}
+                    key={city}
                     city={city}
                   />
                 );
