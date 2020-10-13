@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {OfferPropTypes} from "../../propTypes";
 
 import Header from '../header/header';
 import Footer from '../footer/footer';
@@ -28,8 +29,8 @@ const Favorites = (props) => {
 };
 
 Favorites.propTypes = {
-  offers: PropTypes.array,
-  cities: PropTypes.arrayOf(PropTypes.string),
+  offers: PropTypes.arrayOf(OfferPropTypes).isRequired,
+  cities: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Favorites;

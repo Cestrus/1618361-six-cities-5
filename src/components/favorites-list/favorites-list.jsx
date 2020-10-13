@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {OfferPropTypes} from "../../propTypes";
 import FavoritesLocationList from "../favorites-location-list/favorites-location-list";
 
 const FavoritesList = (props) => {
@@ -36,21 +37,8 @@ const FavoritesList = (props) => {
 };
 
 FavoritesList.propTypes = {
-  offers: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
-    city: PropTypes.string,
-    imgURL: PropTypes.string,
-    price: PropTypes.number,
-    description: PropTypes.string,
-    type: PropTypes.string,
-    isPremium: PropTypes.bool,
-    isFavorites: PropTypes.bool,
-    bedrooms: PropTypes.number,
-    maxAdults: PropTypes.number,
-    whatsInside: PropTypes.arrayOf(PropTypes.string),
-    rating: PropTypes.number,
-  })),
-  cities: PropTypes.arrayOf(PropTypes.string),
+  offers: PropTypes.arrayOf(OfferPropTypes).isRequired,
+  cities: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default FavoritesList;

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {OfferPropTypes} from "../../propTypes";
 import FavoritesCard from "../favorites-card/favorites-card";
 
 const FavoritesLocationList = (props) => {
@@ -28,7 +29,7 @@ const FavoritesLocationList = (props) => {
 };
 
 FavoritesLocationList.propTypes = {
-  offersByCity: PropTypes.array,
+  offersByCity: PropTypes.arrayOf(OfferPropTypes).isRequired,
 };
 
 export default FavoritesLocationList;

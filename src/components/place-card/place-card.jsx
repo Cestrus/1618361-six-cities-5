@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {OfferPropTypes} from "../../propTypes";
 import {Link, withRouter} from 'react-router-dom';
 
 const PlaceCard = (props) => {
@@ -52,22 +53,9 @@ const PlaceCard = (props) => {
 };
 
 PlaceCard.propTypes = {
-  offer: PropTypes.shape({
-    id: PropTypes.number,
-    city: PropTypes.string,
-    imgURL: PropTypes.string,
-    price: PropTypes.number,
-    description: PropTypes.string,
-    type: PropTypes.string,
-    isPremium: PropTypes.bool,
-    isFavorites: PropTypes.bool,
-    bedrooms: PropTypes.number,
-    maxAdults: PropTypes.number,
-    whatsInside: PropTypes.arrayOf(PropTypes.string),
-    rating: PropTypes.number,
-  }),
-  onPlaceCardClick: PropTypes.func,
-  onPlaceCardMouseEnter: PropTypes.func,
+  offer: PropTypes.shape(OfferPropTypes).isRequired,
+  onPlaceCardClick: PropTypes.func.isRequired,
+  onPlaceCardMouseEnter: PropTypes.func.isRequired,
 };
 
 export default withRouter(PlaceCard);

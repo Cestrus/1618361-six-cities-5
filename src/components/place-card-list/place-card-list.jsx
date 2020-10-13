@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react';
 import {withRouter} from "react-router-dom";
 import PropTypes from 'prop-types';
+import {OfferPropTypes} from "../../propTypes";
 import PlaceCard from "../place-card/place-card";
 
 class PlaceCardList extends PureComponent {
@@ -50,9 +51,9 @@ class PlaceCardList extends PureComponent {
 }
 
 PlaceCardList.propTypes = {
-  offers: PropTypes.array,
-  history: PropTypes.object,
-  page: PropTypes.string,
+  offers: PropTypes.arrayOf(OfferPropTypes).isRequired,
+  history: PropTypes.object.isRequired,
+  page: PropTypes.string.isRequired,
 };
 
 export default withRouter(PlaceCardList);

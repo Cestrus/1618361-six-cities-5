@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {ReviewPropTypes} from "../../propTypes";
 
 const ReviewItem = (props) => {
   const {img, author, comment, date} = props.review;
@@ -28,7 +29,7 @@ const ReviewItem = (props) => {
 };
 
 ReviewItem.propTypes = {
-  review: PropTypes.object,
+  review: PropTypes.shape(ReviewPropTypes).isRequired,
 };
 
 export default ReviewItem;

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {OfferPropTypes} from "../../propTypes";
 import {Link, withRouter} from 'react-router-dom';
 
 const FavoritesCard = (props) => {
@@ -41,14 +42,7 @@ const FavoritesCard = (props) => {
 };
 
 FavoritesCard.propTypes = {
-  offer: PropTypes.shape({
-    id: PropTypes.number,
-    imgURL: PropTypes.string,
-    price: PropTypes.number,
-    description: PropTypes.string,
-    type: PropTypes.string,
-    rating: PropTypes.number,
-  }),
+  offer: PropTypes.shape(OfferPropTypes).isRequired,
 };
 
 export default withRouter(FavoritesCard);

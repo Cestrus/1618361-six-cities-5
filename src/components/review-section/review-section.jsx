@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {ReviewPropTypes} from "../../propTypes";
 
 import ReviewList from "../review-list/review-list";
 import FormSendComment from "../form-send-comment/form-send-comment";
@@ -20,7 +21,7 @@ const ReviewSection = (props) => {
 
 ReviewSection.propTypes = {
   reviews: PropTypes.arrayOf(PropTypes.shape({
-    reviewList: PropTypes.arrayOf(PropTypes.object)
+    reviewList: PropTypes.arrayOf(ReviewPropTypes).isRequired,
   })),
 };
 

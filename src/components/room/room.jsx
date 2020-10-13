@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {ReviewPropTypes, OfferPropTypes} from "../../propTypes";
 import {withRouter} from "react-router-dom";
 
 import Header from '../header/header';
@@ -107,8 +108,8 @@ const Room = (props) => {
 };
 
 Room.propTypes = {
-  offers: PropTypes.array,
-  reviews: PropTypes.array,
+  offers: PropTypes.arrayOf(OfferPropTypes),
+  reviews: PropTypes.arrayOf(ReviewPropTypes),
 };
 
 export default withRouter(Room);

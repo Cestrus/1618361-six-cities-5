@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react';
-import PropTypes from 'prop-types';
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
+import PropTypes from 'prop-types';
+import {OfferPropTypes, ReviewPropTypes} from '../../propTypes';
 
 import Main from '../main/main';
 import Login from '../login/login';
@@ -26,42 +27,40 @@ class App extends PureComponent {
     const {cities, offers, reviews} = this.props;
 
     return (
-      <BrowserRouter>
-        <Switch>
-          <Route path='/' exact render={() => (
-            <Main
-              cities={cities}
-              offers={offers}
-            />
-          )}/>
-          <Route path='/login' exact render={() => (
-            <Login
-              user={user}
-            />
-          )}/>
-          <Route path='/favorites' exact render={() => (
-            <Favorites
-              cities={cities}
-              offers={offers}
-            />
-          )}/>
-          <Route path='/offer/:id' exact render={() => (
-            <Room
-              offers={offers}
-              reviews={reviews}
-            />
-          )}/>
-          <Redirect to='/'/>
-        </Switch>
-      </BrowserRouter>
+      <Switch>
+        <Route path='/' exact render={() => (
+          <Main
+            cities={cities}
+            offers={offers}
+          />
+        )}/>
+        <Route path='/login' exact render={() => (
+          <Login
+            user={user}
+          />
+        )}/>
+        <Route path='/favorites' exact render={() => (
+          <Favorites
+            cities={cities}
+            offers={offers}
+          />
+        )}/>
+        <Route path='/offer/:id' exact render={() => (
+          <Room
+            offers={offers}
+            reviews={reviews}
+          />
+        )}/>
+        <Redirect to='/'/>
+      </Switch>
     );
   }
 }
 
 App.propTypes = {
-  cities: PropTypes.arrayOf(PropTypes.string),
-  offers: PropTypes.array,
-  reviews: PropTypes.array,
+  cities: PropTypes.arrayOf(PropTypes.string).isRequired,
+  offers: PropTypes.arrayOf(OfferPropTypes).isRequired,
+  reviews: PropTypes.arrayOf(ReviewPropTypes).isRequired,
 };
 
 export default App;

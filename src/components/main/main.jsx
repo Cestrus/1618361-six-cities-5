@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {OfferPropTypes} from "../../propTypes";
 
 import Header from '../header/header';
 import PlaceCardList from "../place-card-list/place-card-list";
@@ -63,8 +64,8 @@ const Main = (props) => {
 };
 
 Main.propTypes = {
-  cities: PropTypes.arrayOf(PropTypes.string),
-  offers: PropTypes.array,
+  cities: PropTypes.arrayOf(PropTypes.string).isRequired,
+  offers: PropTypes.arrayOf(OfferPropTypes).isRequired,
 };
 
 export default Main;

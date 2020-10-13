@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
+import {UserPropTypes} from '../../propTypes';
 
 class FormLogin extends PureComponent {
   constructor(props) {
@@ -35,7 +36,7 @@ class FormLogin extends PureComponent {
 }
 
 FormLogin.propTypes = {
-  user: PropTypes.object,
+  user: PropTypes.shape(UserPropTypes).isRequired,
 };
 
 export default FormLogin;

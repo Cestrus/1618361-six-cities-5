@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {UserPropTypes} from "../../propTypes";
 
 import Header from '../header/header';
 import FormLogin from "../form-login/form-login";
@@ -32,7 +33,7 @@ const Login = (props) => {
 };
 
 Login.propTypes = {
-  user: PropTypes.object,
+  user: PropTypes.shape(UserPropTypes).isRequired
 };
 
 export default Login;
