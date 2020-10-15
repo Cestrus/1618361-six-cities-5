@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {OfferPropTypes, ReviewPropTypes} from '../../propTypes';
+import {OfferPropTypes} from '../../propTypes';
 
 import Main from '../main/main';
 import Login from '../login/login';

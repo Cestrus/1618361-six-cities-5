@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {OfferPropTypes} from "../../propTypes";
 import {Link, withRouter} from 'react-router-dom';
 

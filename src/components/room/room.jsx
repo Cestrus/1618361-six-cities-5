@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {ReviewPropTypes, OfferPropTypes} from "../../propTypes";
+import {OfferPropTypes} from "../../propTypes";
 import {withRouter} from "react-router-dom";
 
 import Header from '../header/header';
