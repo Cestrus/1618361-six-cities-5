@@ -59,7 +59,7 @@ class App extends PureComponent {
 App.propTypes = {
   cities: PropTypes.arrayOf(PropTypes.string).isRequired,
   offers: PropTypes.arrayOf(OfferPropTypes).isRequired,
-  reviews: PropTypes.arrayOf(ReviewPropTypes).isRequired,
+  reviews: PropTypes.array.isRequired,
 };
 
 export default App;

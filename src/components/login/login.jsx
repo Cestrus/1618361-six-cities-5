@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {UserPropTypes} from "../../propTypes";
 
 import Header from '../header/header';
@@ -33,7 +32,7 @@ const Login = (props) => {
 };
 
 Login.propTypes = {
-  user: PropTypes.shape(UserPropTypes).isRequired
+  user: UserPropTypes.isRequired
 };
 
 export default Login;

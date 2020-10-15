@@ -7,7 +7,7 @@ import Footer from '../footer/footer';
 import FavoritesList from "../favorites-list/favorites-list";
 
 const Favorites = (props) => {
-  const {offers, cities} = props;
+  const {offers} = props;
 
   return (
     <div className="page">
@@ -18,7 +18,6 @@ const Favorites = (props) => {
             <h1 className="favorites__title">Saved listing</h1>
             <FavoritesList
               offers={offers}
-              cities={cities}
             />
           </section>
         </div>

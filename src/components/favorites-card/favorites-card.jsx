@@ -42,7 +42,7 @@ const FavoritesCard = (props) => {
 };
 
 FavoritesCard.propTypes = {
-  offer: PropTypes.shape(OfferPropTypes).isRequired,
+  offer: OfferPropTypes.isRequired,
 };
 
 export default withRouter(FavoritesCard);

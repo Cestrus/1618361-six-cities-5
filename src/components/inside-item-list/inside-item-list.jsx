@@ -6,10 +6,10 @@ const InsideItemList = () => {
 
   return (
     <ul className="property__inside-list">
-      {items.map((item, index) => {
+      {items.map((item) => {
         return (
           <li
-            key={index}
+            key={item}
             className="property__inside-item"
           >
             {item}

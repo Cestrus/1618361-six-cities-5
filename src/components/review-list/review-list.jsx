@@ -8,10 +8,10 @@ const ReviewList = (props) => {
 
   return (
     <ul className="reviews__list">
-      {reviewList.map((review, index) => {
+      {reviewList.map((review) => {
         return (
           <ReviewItem
-            key={index}
+            key={Math.random()}
             review={review}
           />
         );

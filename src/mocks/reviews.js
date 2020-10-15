@@ -8,22 +8,12 @@ const reviews = [
         author: `Nick Rivers`,
         img: `${AVATAR_URL}/${Math.random()}`,
         comment: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque cum, esse, excepturi exercitationem hic laboriosam libero magni nam perferendis quae quam quidem reiciendis repellendus sit, tempora unde ut voluptatem`,
-        date: {
-          day: 1,
-          monthLetter: `April`,
-          month: `04`,
-          year: 2020
-        }
+        date: new Date(new Date(2019, 4, 20).toISOString()).toString(),
       }, {
         author: `Riv Nickkers`,
         img: `${AVATAR_URL}/${Math.random()}`,
         comment: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque cum, esse, excepturi exercitationem hic laboriosam libero magni nam perferendis quae quam quidem reiciendis repellendus sit, tempora unde ut voluptatem`,
-        date: {
-          day: 2,
-          monthLetter: `April`,
-          month: `04`,
-          year: 2020
-        }
+        date: new Date(new Date(2019, 4, 20).toISOString()).toString(),
       }
     ]
   }, {
@@ -33,22 +23,12 @@ const reviews = [
         author: `Angela Devis`,
         img: `${AVATAR_URL}/${Math.random()}`,
         comment: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque cum, esse, excepturi exercitationem hic laboriosam libero magni nam perferendis quae quam quidem reiciendis repellendus sit, tempora unde ut voluptatem`,
-        date: {
-          day: 3,
-          monthLetter: `April`,
-          month: `04`,
-          year: 2020
-        }
+        date: new Date(new Date(2019, 4, 20).toISOString()).toString(),
       }, {
         author: `Rick Week`,
         img: `${AVATAR_URL}/${Math.random()}`,
         comment: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque cum, esse, excepturi exercitationem hic laboriosam libero magni nam perferendis quae quam quidem reiciendis repellendus sit, tempora unde ut voluptatem`,
-        date: {
-          day: 4,
-          monthLetter: `April`,
-          month: `04`,
-          year: 2020
-        }
+        date: new Date(new Date(2019, 4, 20).toISOString()).toString(),
       }
     ]
   }, {
@@ -58,22 +38,12 @@ const reviews = [
         author: `Paul Pepper`,
         img: `${AVATAR_URL}/${Math.random()}`,
         comment: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque cum, esse, excepturi exercitationem hic laboriosam libero magni nam perferendis quae quam quidem reiciendis repellendus sit, tempora unde ut voluptatem`,
-        date: {
-          day: 5,
-          monthLetter: `April`,
-          month: `04`,
-          year: 2020
-        }
+        date: new Date(new Date(2019, 4, 20).toISOString()).toString(),
       }, {
         author: `Lion Mouse`,
         img: `${AVATAR_URL}/${Math.random()}`,
         comment: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque cum, esse, excepturi exercitationem hic laboriosam libero magni nam perferendis quae quam quidem reiciendis repellendus sit, tempora unde ut voluptatem`,
-        date: {
-          day: 6,
-          monthLetter: `April`,
-          month: `04`,
-          year: 2020
-        }
+        date: new Date(new Date(2019, 4, 20).toISOString()).toString(),
       }
     ]
   }, {
@@ -83,22 +53,12 @@ const reviews = [
         author: `Bobby Silver`,
         img: `${AVATAR_URL}/${Math.random()}`,
         comment: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque cum, esse, excepturi exercitationem hic laboriosam libero magni nam perferendis quae quam quidem reiciendis repellendus sit, tempora unde ut voluptatem`,
-        date: {
-          day: 7,
-          monthLetter: `April`,
-          month: `04`,
-          year: 2020
-        }
+        date: new Date(new Date(2019, 4, 20).toISOString()).toString(),
       }, {
         author: `Freddy Dept`,
         img: `${AVATAR_URL}/${Math.random()}`,
         comment: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque cum, esse, excepturi exercitationem hic laboriosam libero magni nam perferendis quae quam quidem reiciendis repellendus sit, tempora unde ut voluptatem`,
-        date: {
-          day: 8,
-          monthLetter: `April`,
-          month: `04`,
-          year: 2020
-        }
+        date: new Date(new Date(2019, 4, 20).toISOString()).toString(),
       }
     ]
   }, {
@@ -108,22 +68,12 @@ const reviews = [
         author: `Dudle Ferrum`,
         img: `${AVATAR_URL}/${Math.random()}`,
         comment: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque cum, esse, excepturi exercitationem hic laboriosam libero magni nam perferendis quae quam quidem reiciendis repellendus sit, tempora unde ut voluptatem`,
-        date: {
-          day: 9,
-          monthLetter: `April`,
-          month: `04`,
-          year: 2020
-        }
+        date: new Date(new Date(2019, 4, 20).toISOString()).toString(),
       }, {
         author: `Susan Musan`,
         img: `${AVATAR_URL}/${Math.random()}`,
         comment: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque cum, esse, excepturi exercitationem hic laboriosam libero magni nam perferendis quae quam quidem reiciendis repellendus sit, tempora unde ut voluptatem`,
-        date: {
-          day: 10,
-          monthLetter: `April`,
-          month: `04`,
-          year: 2020
-        }
+        date: new Date(new Date(2019, 4, 20).toISOString()).toString(),
       }
     ]
   }

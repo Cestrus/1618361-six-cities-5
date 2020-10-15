@@ -4,15 +4,15 @@ import Star from "../star/star";
 
 
 const StarLine = (props) => {
-  const rating = [{title: `perfect`, value: 5}, {title: `good`, value: 4}, {title: `not bad`, value: 3}, {title: `badly`, value: 2}, {title: `terribly`, value: 1}];
+  const rating = [{title: `perfect`, value: 5}, {title: `good`, value: 4}, {title: `not bad`, value: 3}, {title: `bad`, value: 2}, {title: `terrible`, value: 1}];
   const {onInputRatingClick} = props;
 
   return (
     <div className="reviews__rating-form form__rating">
-      {rating.map((el, index) => {
+      {rating.map((el) => {
         return (
           <Star
-            key={index}
+            key={el.title}
             value={el.value}
             id={`${el.value}-stars`}
             htmlFor={`${el.value}-stars`}

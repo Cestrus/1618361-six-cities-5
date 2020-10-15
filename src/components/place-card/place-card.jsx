@@ -50,7 +50,7 @@ const PlaceCard = (props) => {
 };
 
 PlaceCard.propTypes = {
-  offer: PropTypes.shape(OfferPropTypes).isRequired,
+  offer: OfferPropTypes.isRequired,
   onPlaceCardClick: PropTypes.func.isRequired,
   onPlaceCardMouseEnter: PropTypes.func.isRequired,
 };

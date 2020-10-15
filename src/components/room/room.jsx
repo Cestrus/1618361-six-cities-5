@@ -108,8 +108,8 @@ const Room = (props) => {
 };
 
 Room.propTypes = {
-  offers: PropTypes.arrayOf(OfferPropTypes),
-  reviews: PropTypes.arrayOf(ReviewPropTypes),
+  offers: PropTypes.arrayOf(OfferPropTypes).isRequired,
+  reviews: PropTypes.array.isRequired,
 };
 
 export default withRouter(Room);

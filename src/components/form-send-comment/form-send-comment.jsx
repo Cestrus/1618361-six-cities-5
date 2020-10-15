@@ -14,17 +14,17 @@ class FormSendComment extends PureComponent {
     };
   }
 
-  handleSubmit(ev) {
-    ev.preventDefault();
+  handleSubmit(event) {
+    event.preventDefault();
   }
 
-  handleTextareaChange(ev) {
-    const {value} = ev.target;
+  handleTextareaChange(event) {
+    const {value} = event.target;
     this.setState({comment: value});
   }
 
-  handleInputRatingClick(ev) {
-    const {value} = ev.target;
+  handleInputRatingClick(event) {
+    const {value} = event.target;
     this.setState({value});
   }
 

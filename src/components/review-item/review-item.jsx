@@ -22,14 +22,14 @@ const ReviewItem = (props) => {
         <p className="reviews__text">
           {comment}
         </p>
-        <time className="reviews__time" dateTime={`${date.year}-${date.month}-${date.day}`}>{`${date.monthLetter} ${date.day}`}</time>
+        <time className="reviews__time" dateTime={`${date}`}>{`${date.split(` `)[1]} ${date.split(` `)[2]}`}</time>
       </div>
     </li>
   );
 };
 
 ReviewItem.propTypes = {
-  review: PropTypes.shape(ReviewPropTypes).isRequired,
+  review: ReviewPropTypes.isRequired,
 };
 
 export default ReviewItem;
