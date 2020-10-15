@@ -1,43 +1,65 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
+import {Switch, Route, Redirect} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
+import {OfferPropTypes} from '../../propTypes';
 
 import Main from '../main/main';
 import Login from '../login/login';
 import Room from '../room/room';
 import Favorites from '../favorites/favorites';
 
-import placeCardsData from '../../mocks/placeCardsDataMock';
-import cities from '../../mocks/citiesMock';
 
-const App = () => {
+class App extends PureComponent {
+  constructor(props) {
+    super(props);
 
-  return (
-    <BrowserRouter>
+    this.state = {
+      user: {
+        email: null,
+        password: null,
+      },
+    };
+  }
+
+  render() {
+    const {user} = this.state;
+    const {cities, offers, reviews} = this.props;
+
+    return (
       <Switch>
         <Route path='/' exact render={() => (
           <Main
-            cities = {cities}
-            placeCardsData = {placeCardsData}
+            cities={cities}
+            offers={offers}
           />
         )}/>
-        <Route path='/login' exact component={Login}/>
-        <Route path='/favorites' exact component={Favorites}/>
-        <Route path='/offer/:id' exact component={Room}/>
+        <Route path='/login' exact render={() => (
+          <Login
+            user={user}
+          />
+        )}/>
+        <Route path='/favorites' exact render={() => (
+          <Favorites
+            cities={cities}
+            offers={offers}
+          />
+        )}/>
+        <Route path='/offer/:id' exact render={() => (
+          <Room
+            offers={offers}
+            reviews={reviews}
+          />
+        )}/>
         <Redirect to='/'/>
       </Switch>
-    </BrowserRouter>
-  );
-};
+    );
+  }
+}
 
 App.propTypes = {
-  cities: PropTypes.arrayOf(PropTypes.string),
-  placeCardsData: PropTypes.arrayOf(PropTypes.shape({
-    imgURL: PropTypes.string,
-    price: PropTypes.number,
-    name: PropTypes.string,
-    type: PropTypes.string,
-  })),
+  cities: PropTypes.arrayOf(PropTypes.string).isRequired,
+  offers: PropTypes.arrayOf(OfferPropTypes).isRequired,
+  reviews: PropTypes.array.isRequired,
 };
 
 export default App;
