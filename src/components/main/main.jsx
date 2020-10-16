@@ -5,6 +5,7 @@ import {OfferPropTypes} from "../../propTypes";
 import Header from '../header/header';
 import PlaceCardList from "../place-card-list/place-card-list";
 import LocationsItem from "../locations-item/locations-item";
+import LeafletMap from '../leaflet-map/leaflet-map';
 
 const Main = (props) => {
   const {cities, offers} = props;
@@ -54,7 +55,10 @@ const Main = (props) => {
               />
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"/>
+              <LeafletMap
+                cities={cities}
+                offers={offers}
+              />
             </div>
           </div>
         </div>

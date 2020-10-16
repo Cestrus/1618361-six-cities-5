@@ -26,7 +26,7 @@ class PlaceCardList extends PureComponent {
   }
 
   handlePlaceCardClick() {
-    // this.history.push(`/offer/` + this.state.chosenRoom.id);
+    // some logic
   }
 
   render() {

@@ -10,7 +10,6 @@ import ReviewSection from "../review-section/review-section";
 
 const Room = (props) => {
   const {offers, reviews} = props;
-  // const chosenRoom = offers[props.match.params.id];
   return (
     <div className="page">
       <Header/>

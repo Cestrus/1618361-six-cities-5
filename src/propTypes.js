@@ -13,6 +13,7 @@ export const OfferPropTypes = PropTypes.shape({
   maxAdults: PropTypes.number.isRequired,
   whatsInside: PropTypes.arrayOf(PropTypes.string).isRequired,
   rating: PropTypes.number.isRequired,
+  coordinates: PropTypes.arrayOf(PropTypes.number).isRequired,
 });
 
 export const UserPropTypes = PropTypes.objectOf(PropTypes.shape({
@@ -25,5 +26,10 @@ export const ReviewPropTypes = PropTypes.shape({
   author: PropTypes.string.isRequired,
   comment: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
+});
+
+export const ReviewsPropTypes = PropTypes.shape({
+  offerID: PropTypes.number.isRequired,
+  reviewList: PropTypes.arrayOf(ReviewPropTypes).isRequired,
 });
 

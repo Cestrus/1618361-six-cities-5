@@ -1,7 +1,7 @@
 const offers = [
   {
     id: 0,
-    city: `Dusseldorf`,
+    city: `Amsterdam`,
     imgURL: `img/apartment-03.jpg`,
     price: 90,
     description: `Beautiful apartment at great location`,
@@ -12,10 +12,11 @@ const offers = [
     maxAdults: 3,
     whatsInside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Dishwasher`, `Towels`],
     rating: 3,
+    coordinates: [52.3909553943508, 4.85309666406198],
   },
   {
     id: 1,
-    city: `Paris`,
+    city: `Amsterdam`,
     imgURL: `img/apartment-01.jpg`,
     price: 120,
     description: `Beautiful & luxurious apartment at great location`,
@@ -26,10 +27,11 @@ const offers = [
     maxAdults: 4,
     whatsInside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
     rating: 5,
+    coordinates: [52.369553943508, 4.85309666406198],
   },
   {
     id: 2,
-    city: `Paris`,
+    city: `Amsterdam`,
     imgURL: `img/room.jpg`,
     price: 80,
     description: `Wood and stone place`,
@@ -40,10 +42,11 @@ const offers = [
     maxAdults: 3,
     whatsInside: [`Wi-Fi`, `Kitchen`, `Fridge`, `Washing machine`, `Dishwasher`, `Towels`, `Cabel TV`],
     rating: 4,
+    coordinates: [52.3909553943508, 4.929309666406198],
   },
   {
     id: 3,
-    city: `Cologne`,
+    city: `Amsterdam`,
     imgURL: `img/apartment-02.jpg`,
     price: 132,
     description: `Canal View Prinsengracht`,
@@ -54,6 +57,7 @@ const offers = [
     maxAdults: 3,
     whatsInside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Dishwasher`, `Towels`, `Cabel TV`],
     rating: 4,
+    coordinates: [52.3809553943508, 4.939309666406198],
   },
   {
     id: 4,
@@ -68,10 +72,11 @@ const offers = [
     maxAdults: 4,
     whatsInside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
     rating: 5,
+    coordinates: [52.3509553943508, 4.90309666406198],
   },
   {
     id: 5,
-    city: `Hamburg`,
+    city: `Amsterdam`,
     imgURL: `img/room.jpg`,
     price: 180,
     description: `White castle`,
@@ -82,6 +87,7 @@ const offers = [
     maxAdults: 4,
     whatsInside: [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`],
     rating: 5,
+    coordinates: [52.4009553943508, 4.89309666406198],
   }
 ];
 

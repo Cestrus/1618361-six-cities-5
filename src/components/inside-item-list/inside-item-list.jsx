@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 
 const InsideItemList = () => {
   const items = [`Wi-Fi`, `Heating`, `Kitchen`, `Fridge`, `Washing machine`, `Coffee machine`, `Dishwasher`, `Towels`, `Baby seat`, `Cabel TV`];
