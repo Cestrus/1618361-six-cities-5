@@ -1,11 +1,18 @@
 import React, {PureComponent} from 'react';
-import {Map as LeafletMap, TileLayer, Marker} from 'react-leaflet';
+import leaflet from 'leaflet';
 import PropTypes from 'prop-types';
 import {OfferPropTypes} from "../../propTypes";
 
-export default class Map extends PureComponent {
+
+export default class LeafletMap extends PureComponent {
   constructor(props) {
     super(props);
+
+    this.map = null;
+    this.icon = leaflet.icon({
+      iconUrl: `img/pin.svg`,
+      iconSize: [30, 30]
+    });
 
     this.state = {
       city: [52.38333, 4.9],
@@ -13,29 +20,48 @@ export default class Map extends PureComponent {
     };
   }
 
+  componentDidMount() {
+    this.initialMap();
+    this.props.offers.forEach((offer) => {
+      this.markToMap(offer.coordinates);
+    });
+  }
+
+  initialMap() {
+    this.map = leaflet.map(`map`, {
+      center: this.state.city,
+      zoom: this.state.zoom,
+      zoomControl: false,
+      marker: true,
+    });
+
+    this.map.setView(this.state.city, this.state.zoom);
+
+    leaflet
+    .tileLayer(`https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png`, {
+      attribution: `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>`
+    })
+    .addTo(this.map);
+  }
+
+  markToMap(offerCords) {
+    leaflet
+    .marker(offerCords, this.icon)
+    .addTo(this.map);
+  }
+
   render() {
+
     return (
       <section className="cities__map map">
-        <LeafletMap center={this.state.city} zoom={this.state.zoom}>
-          <TileLayer
-            attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          {this.props.offers.map((offer) => {
-            return (
-              <Marker
-                key={offer.id}
-                position={offer.coordinates}>
-              </Marker>
-            );
-          }) }
-        </LeafletMap>
+        <div id="map" style={{height: `100%`}}/>
       </section>
     );
   }
 }
 
-Map.propTypes = {
+
+LeafletMap.propTypes = {
   offers: PropTypes.arrayOf(OfferPropTypes),
 };
 
