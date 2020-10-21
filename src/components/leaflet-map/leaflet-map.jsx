@@ -2,6 +2,7 @@ import React, {PureComponent} from 'react';
 import leaflet from 'leaflet';
 import PropTypes from 'prop-types';
 import {OfferPropTypes} from "../../propTypes";
+import 'leaflet/dist/leaflet.css';
 
 
 export default class LeafletMap extends PureComponent {
@@ -21,13 +22,13 @@ export default class LeafletMap extends PureComponent {
   }
 
   componentDidMount() {
-    this.initialMap();
+    this.initializeMap();
     this.props.offers.forEach((offer) => {
       this.markToMap(offer.coordinates);
     });
   }
 
-  initialMap() {
+  initializeMap() {
     this.map = leaflet.map(`map`, {
       center: this.state.city,
       zoom: this.state.zoom,
@@ -46,7 +47,7 @@ export default class LeafletMap extends PureComponent {
 
   markToMap(offerCords) {
     leaflet
-    .marker(offerCords, this.icon)
+    .marker(offerCords, {icon: this.icon})
     .addTo(this.map);
   }
 
