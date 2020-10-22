@@ -15,11 +15,12 @@ const FavoritesList = (props) => {
 
   return (
     <ul className="favorites__list">
-      {Object.entries(offersByCities).map((offersByCity) => {
+      {Object.entries(offersByCities).map(([city, offersByCity]) => {
         return (
-          (offersByCity[1].length)
+          (offersByCity.length)
             ? <FavoritesLocationList
-              key={offersByCity[0]}
+              key={city}
+              city={city}
               offersByCity={offersByCity}
             />
             : null

@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {OfferPropTypes} from '../../propTypes';
+import {OfferPropTypes, ReviewsPropTypes} from '../../propTypes';
 
 import Main from '../main/main';
 import Login from '../login/login';
@@ -27,29 +27,29 @@ class App extends PureComponent {
 
     return (
       <Switch>
-        <Route path='/' exact render={() => (
+        <Route path='/' exact>
           <Main
             cities={cities}
             offers={offers}
           />
-        )}/>
-        <Route path='/login' exact render={() => (
+        </Route>
+        <Route path='/login' exact>
           <Login
             user={user}
           />
-        )}/>
-        <Route path='/favorites' exact render={() => (
+        </Route>
+        <Route path='/favorites' exact>
           <Favorites
             cities={cities}
             offers={offers}
           />
-        )}/>
-        <Route path='/offer/:id' exact render={() => (
+        </Route>
+        <Route path='/offer/:id' exact>
           <Room
             offers={offers}
             reviews={reviews}
           />
-        )}/>
+        </Route>
         <Redirect to='/'/>
       </Switch>
     );
@@ -59,7 +59,7 @@ class App extends PureComponent {
 App.propTypes = {
   cities: PropTypes.arrayOf(PropTypes.string).isRequired,
   offers: PropTypes.arrayOf(OfferPropTypes).isRequired,
-  reviews: PropTypes.array.isRequired,
+  reviews: PropTypes.arrayOf(ReviewsPropTypes).isRequired,
 };
 
 export default App;
