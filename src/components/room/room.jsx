@@ -93,7 +93,7 @@ const Room = (props) => {
             </div>
           </div>
           <Map
-            className = {`property__map`}
+            className = "property__map"
             offers={offers.slice(0, 3)} // имитация 3-х объявлений расположенных неподалёку
           />
         </section>

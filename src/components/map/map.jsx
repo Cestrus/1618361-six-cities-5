@@ -16,7 +16,6 @@ const Map = (props) => {
 
 Map.propTypes = {
   className: PropTypes.string,
-  restProps: PropTypes.object,
 };
 
 export default Map;
