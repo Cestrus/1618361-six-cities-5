@@ -7,9 +7,11 @@ import Header from '../header/header';
 import PlaceCardList from "../place-card-list/place-card-list";
 import InsideItemList from "../inside-item-list/inside-item-list";
 import ReviewSection from "../review-section/review-section";
+import Map from '../map/map';
 
 const Room = (props) => {
   const {offers, reviews} = props;
+
   return (
     <div className="page">
       <Header/>
@@ -90,13 +92,16 @@ const Room = (props) => {
               />
             </div>
           </div>
-          <section className="property__map map"/>
+          <Map
+            className = {`property__map`}
+            offers={offers.slice(0, 3)} // имитация 3-х объявлений расположенных неподалёку
+          />
         </section>
         <div className="container">
           <section className="near-places places">
             <h2 className="near-places__title">Other places in the neighbourhood</h2>
             <PlaceCardList
-              offers={offers}
+              offers={offers.slice(0, 3)} // имитация 3-х объявлений расположенных неподалёку
               page="room"
             />
           </section>

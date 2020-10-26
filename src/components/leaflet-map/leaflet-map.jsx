@@ -45,16 +45,16 @@ export default class LeafletMap extends PureComponent {
     .addTo(this.map);
   }
 
-  markToMap(offerCords) {
+  markToMap(offerCoords) {
     leaflet
-    .marker(offerCords, {icon: this.icon})
+    .marker(offerCoords, {icon: this.icon})
     .addTo(this.map);
   }
 
   render() {
 
     return (
-      <section className="cities__map map">
+      <section className={this.props.className}>
         <div id="map" style={{height: `100%`}}/>
       </section>
     );
@@ -64,5 +64,6 @@ export default class LeafletMap extends PureComponent {
 
 LeafletMap.propTypes = {
   offers: PropTypes.arrayOf(OfferPropTypes),
+  className: PropTypes.string,
 };
 
