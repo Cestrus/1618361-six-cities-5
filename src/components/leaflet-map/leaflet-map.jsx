@@ -16,7 +16,7 @@ export default class LeafletMap extends PureComponent {
     });
 
     this.state = {
-      city: [52.38333, 4.9],
+      city: this.props.offers[0].cityCoord,
       zoom: 12,
     };
   }
@@ -24,7 +24,7 @@ export default class LeafletMap extends PureComponent {
   componentDidMount() {
     this.initializeMap();
     this.props.offers.forEach((offer) => {
-      this.markToMap(offer.coordinates);
+      this.markToMap(offer.offerCoord);
     });
   }
 
@@ -45,9 +45,9 @@ export default class LeafletMap extends PureComponent {
     .addTo(this.map);
   }
 
-  markToMap(offerCoords) {
+  markToMap(offerCoord) {
     leaflet
-    .marker(offerCoords, {icon: this.icon})
+    .marker(offerCoord, {icon: this.icon})
     .addTo(this.map);
   }
 

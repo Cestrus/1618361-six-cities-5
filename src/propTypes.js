@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 export const OfferPropTypes = PropTypes.shape({
   id: PropTypes.number.isRequired,
   city: PropTypes.string.isRequired,
+  cityCoord: PropTypes.arrayOf(PropTypes.number).isRequired,
   imgURL: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
@@ -13,7 +14,7 @@ export const OfferPropTypes = PropTypes.shape({
   maxAdults: PropTypes.number.isRequired,
   whatsInside: PropTypes.arrayOf(PropTypes.string).isRequired,
   rating: PropTypes.number.isRequired,
-  coordinates: PropTypes.arrayOf(PropTypes.number).isRequired,
+  offerCoord: PropTypes.arrayOf(PropTypes.number).isRequired,
 });
 
 export const UserPropTypes = PropTypes.objectOf(PropTypes.shape({

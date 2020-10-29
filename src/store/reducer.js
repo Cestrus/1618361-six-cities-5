@@ -1,9 +1,9 @@
-import {offers} from '../mocks/offers';
-import {actionCreator} from
+import offers from '../mocks/offers';
+// import {actionCreator} from
 import {
   CHANGE_CITY,
   GET_OFFERS,
-} from '../action-types';
+} from './actions/action-types';
 
 const initialState = {
   city: `Amsterdam`,
