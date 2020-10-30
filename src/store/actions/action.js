@@ -4,13 +4,15 @@ import {
 
 } from '../action-types';
 
-const changeCityAction = () => ({
-  type: CHANGE_CITY,
+export const ActionCreator = {
+  changeCityAction: () => ({
+    type: CHANGE_CITY,
+  }),
 
-});
+  getOffersAction: () => ({
+    type: GET_OFFERS,
+  }),
 
-const getOffersAction = () => ({
-  type: GET_OFFERS,
 
-});
+}; 
 

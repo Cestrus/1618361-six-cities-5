@@ -9,6 +9,7 @@ export default class LeafletMap extends PureComponent {
   constructor(props) {
     super(props);
 
+    this.props = props;
     this.map = null;
     this.icon = leaflet.icon({
       iconUrl: `img/pin.svg`,
@@ -18,12 +19,27 @@ export default class LeafletMap extends PureComponent {
     this.state = {
       city: this.props.offers[0].cityCoord,
       zoom: 12,
+      offers: this.props.offers,
     };
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.city !== prevProps.city) {
+      this.setState({
+        city: this.props.offers[0].cityCoord,
+        offers: this.props.offers,
+      });
+    }
+    this.viewMap();
+    this.state.offers.forEach((offer) => {
+      this.markToMap(offer.offerCoord);
+    });
   }
 
   componentDidMount() {
     this.initializeMap();
-    this.props.offers.forEach((offer) => {
+    this.viewMap();
+    this.state.offers.forEach((offer) => {
       this.markToMap(offer.offerCoord);
     });
   }
@@ -35,7 +51,9 @@ export default class LeafletMap extends PureComponent {
       zoomControl: false,
       marker: true,
     });
+  }
 
+  viewMap() {
     this.map.setView(this.state.city, this.state.zoom);
 
     leaflet
@@ -65,5 +83,6 @@ export default class LeafletMap extends PureComponent {
 LeafletMap.propTypes = {
   offers: PropTypes.arrayOf(OfferPropTypes),
   className: PropTypes.string,
+  city: PropTypes.string,
 };
 

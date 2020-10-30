@@ -12,7 +12,6 @@ class Main extends React.PureComponent {
     super(props);
     this.cities = props.cities;
     this.offers = props.offers;
-
     this.state = {
       city: `Amsterdam`,
       cityOffers: this.offers.filter((offer) => offer.city === `Amsterdam`),
@@ -21,14 +20,9 @@ class Main extends React.PureComponent {
     this.handleCity = this.handleCity.bind(this);
   }
 
-  // componentDidMount() {
-  //   if (this.state.city === ``) {
-  //     this.setState({
-  //       city: `Amsterdam`,
-  //       cityOffers: this.offers.filter((offer) => offer.city === `Amsterdam`),
-  //     });
-  //   }
-  // }
+  componentDidMount() {
+
+  }
 
   handleCity(event) {
     const city = event.target.innerHTML;
@@ -37,7 +31,6 @@ class Main extends React.PureComponent {
       city,
       cityOffers
     });
-    console.log(this.state.cityOffers);
   }
 
   render() {
